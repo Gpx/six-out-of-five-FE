@@ -1,0 +1,77 @@
+.main {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 1em;
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.main.open {
+  height: 70vh;
+}
+
+.main > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vmax;
+  color: transparent;
+  flex: 1;
+  margin: 0.3rem;
+  background-size: cover;
+  transition: flex 0.3s ease-in-out, color 0.3s ease-in-out,
+    text-shadow 0.5s ease-in-out, filter 0.8s ease-in-out;
+  border-radius: 2rem;
+  filter: grayscale(100%) hue-rotate(90deg) saturate(150%);
+  transform: skew(-5deg, 0deg);
+  cursor: pointer;
+}
+
+.main > div:hover {
+  flex: 2;
+  color: #fff;
+  filter: grayscale(0%) hue-rotate(90deg) saturate(150%);
+  text-shadow: -0.06rem -0.06rem 0.3rem #fff, 0.06rem 0.06rem 0.3rem #fff,
+    0 0 0.62rem lime, 0 0 1.23rem lime, 0 0 1.85rem lime, 0 0 2.46rem lime,
+    0 0 3.08rem lime;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.06rem -0.06rem 0.3rem #fff, 0.06rem 0.06rem 0.3rem #fff,
+      0 0 0.62rem lime, 0 0 1.23rem lime, 0 0 1.85rem lime, 0 0 2.46rem lime,
+      0 0 3.08rem lime;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.main > div:nth-child(1) {
+  background-image: url("/food.jpeg");
+}
+
+.main > div:nth-child(2) {
+  background-image: url("/gadget.jpeg");
+}
+
+.main > div:nth-child(3) {
+  background-image: url("/websites.jpeg");
+}
+
+.main > div:nth-child(4) {
+  background-image: url("/clothes.jpeg");
+}
